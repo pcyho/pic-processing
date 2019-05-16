@@ -112,11 +112,11 @@ def CNN_train(img_dir, log_dir):
             # 把输入数组转为np.array
             for n in range(batches_count):
                 train_step.run(feed_dict={x: input_images[n * batch_size:(n + 1) * batch_size],
-                                          y_: input_labels[n * batch_size:(n + 1) * batch_size], keep_prob: 0.5})
+                                          y_: input_labels[n * batch_size:(n + 1) * batch_size], keep_prob: 1})
             if remainder > 0:
                 start_index = batches_count * batch_size
                 train_step.run(feed_dict={x: input_images[start_index:input_count - 1],
-                                          y_: input_labels[start_index:input_count - 1], keep_prob: 0.5})
+                                          y_: input_labels[start_index:input_count - 1], keep_prob: 1})
 
             # 每完成五次迭代，判断准确度
             iterate_accuracy = 0
