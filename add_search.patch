@@ -1,0 +1,40 @@
+Index: FCN.tensorflow/TensorflowUtils.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- FCN.tensorflow/TensorflowUtils.py	(revision c90f16c3a9ca85da0b422145241e64eaec580a8f)
++++ FCN.tensorflow/TensorflowUtils.py	(date 1559454769423)
+@@ -59,7 +59,7 @@
+ 
+ def get_variable(weights, name):
+     init = tf.constant_initializer(weights, dtype=tf.float32)
+-    var = tf.get_variable(name=name, initializer=init,  shape=weights.shape)
++    var = tf.get_variable(name=name, initializer=init, shape=weights.shape)
+     return var
+ 
+ 
+@@ -95,7 +95,7 @@
+     return tf.nn.bias_add(conv, b)
+ 
+ 
+-def conv2d_transpose_strided(x, W, b, output_shape=None, stride = 2):
++def conv2d_transpose_strided(x, W, b, output_shape=None, stride=2):
+     # print x.get_shape()
+     # print W.get_shape()
+     if output_shape is None:
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/vcs.xml	(revision 187e67295ed208f83cd8fe43b427b675d144b7cd)
++++ .idea/vcs.xml	(date 1559970290153)
+@@ -2,5 +2,6 @@
+ <project version="4">
+   <component name="VcsDirectoryMappings">
+     <mapping directory="$PROJECT_DIR$" vcs="Git" />
++    <mapping directory="$PROJECT_DIR$/FCN.tensorflow" vcs="Git" />
+   </component>
+ </project>
+\ No newline at end of file
