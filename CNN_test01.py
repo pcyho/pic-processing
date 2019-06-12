@@ -47,9 +47,11 @@ def test_model(img_dir, model_path):
         labels = graph.get_tensor_by_name("test_y:0")
         result = tf.argmax(tf.nn.softmax(y_), 1)  # 预测卡号
         accuracy = graph.get_tensor_by_name("Mean_1:0")  # 正确率计算
-
-        print(sess.run(result, feed_dict={x_: input_images, labels: input_labels, keep_prob: 1.0}))  # 预测结果
-        print(accuracy.eval(feed_dict={x_: input_images, labels: input_labels, keep_prob: 1.0}))  # 输出正确率
+        result = sess.run(result, feed_dict={x_: input_images, labels: input_labels, keep_prob: 1.0})
+        grid = accuracy.eval(feed_dict={x_: input_images, labels: input_labels, keep_prob: 1.0})
+        print(result)  # 预测结果
+        print(grid)  # 输出正确率
+    return (result, grid)
 
 
 def main():
